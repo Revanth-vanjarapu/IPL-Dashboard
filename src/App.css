@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1e293b;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-lg-bg.png');
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png');
+  }
+}
+
+.ipl-dashboard {
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ipl-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  align-items: stretch;
+}
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 630px;
+  justify-content: center;
+  align-content: center;
+  gap: 25px;
+  margin: auto;
+}
+li {
+  list-style: none;
+}
+.card {
+  flex: 1 1 calc(50% - 1px);
+  flex-direction: row;
+  max-width: 300px;
+  background-color: #ffffff33;
+  border: 2px solid #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-decoration: none;
+}
+.card-image {
+  width: 100px;
+  border-radius: 8px;
+}
+
+.card-title {
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 10px;
+}

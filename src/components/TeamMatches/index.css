@@ -1,0 +1,87 @@
+.team-matches {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+  background-color: #1e293b; /* Main background */
+}
+
+.team-banner {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Latest Match Section */
+.latest-match-card {
+  background-color: #5755a7;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+  width: 90%;
+  margin: auto;
+}
+
+.match-title {
+  font-size: 22px;
+  color: #f7db00;
+  margin-bottom: 10px;
+}
+
+.match-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.match-info p {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.match-status.won {
+  color: #18ed66;
+}
+
+.match-status.lost {
+  color: #e31a1a;
+}
+
+/* Recent Matches Section */
+.matches-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.match-card {
+  background-color: #ffffff33;
+  border: 2px solid #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+}
+
+.match-card:nth-child(odd) {
+  background-color: #d91c1f;
+}
+
+.match-card:nth-child(even) {
+  background-color: #4f5db0;
+}
+
+.match-card:first-child {
+  background-color: #da237b; /* Kolkata Knight Riders */
+}
+
+.match-card:nth-child(2) {
+  background-color: #13418b; /* Rajasthan Royals */
+}
+
+.match-card:nth-child(3) {
+  background-color: #f26d22; /* Sunrisers Hyderabad */
+}
+
+.match-card:nth-child(4) {
+  background-color: #0f172a; /* Royal Challengers Bangalore */
+}

@@ -1,0 +1,43 @@
+.team-matches {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.team-banner {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.section-title {
+  font-size: 24px;
+  color: #f7db00;
+  margin-top: 20px;
+}
+
+.matches-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.match-card {
+  background-color: #ffffff33;
+  border: 2px solid #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+}
+
+.match-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.match-info p {
+  color: #ffffff;
+  margin: 5px 0;
+}
