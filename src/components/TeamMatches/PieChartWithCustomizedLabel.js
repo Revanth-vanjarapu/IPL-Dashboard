@@ -19,9 +19,9 @@ const renderCustomizedLabel = ({
     <text
       x={x}
       y={y}
-      fill='white'
+      fill="white"
       textAnchor={x > cx ? 'start' : 'end'}
-      dominantBaseline='central'
+      dominantBaseline="central"
     >
       {`${(percent * 100).toFixed(0)}%`}
     </text>
@@ -34,15 +34,15 @@ const PieChartWithCustomizedLabel = ({data, isAnimationActive = true}) => (
       data={data}
       labelLine={false}
       label={renderCustomizedLabel}
-      fill='#8884d8'
-      dataKey='value'
+      fill="#8884d8"
+      dataKey="value"
       isAnimationActive={isAnimationActive}
     >
       {data.map((entry, index) => (
         <Cell key={`cell-${entry.name}`} fill={COLORS[index % COLORS.length]} />
       ))}
     </Pie>
-    <Legend layout='horizontal' verticalAlign='bottom' align='center' />
+    <Legend layout="horizontal" verticalAlign="bottom" align="center" />
   </PieChart>
 )
 

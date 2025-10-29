@@ -23,10 +23,10 @@ class TeamMatches extends Component {
     let draws = 0
 
     recentMatches.forEach(match => {
-      const {result, competing_team} = match
+      const {result, competing_team: competingTeam} = match
       if (
         result.toLowerCase().includes('won') &&
-        result.includes(competing_team)
+        result.includes(competingTeam)
       ) {
         wins += 1
       } else if (result.toLowerCase().includes('won')) {
@@ -71,7 +71,7 @@ class TeamMatches extends Component {
     const pieData = this.getMatchStats()
 
     return isLoading ? (
-      <div testid="loader">
+      <div data-testid="loader">
         <Loader type="Oval" color="#f7db00" height={50} width={50} />
       </div>
     ) : (
