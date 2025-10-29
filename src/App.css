@@ -95,3 +95,17 @@ li {
   color: #ffffff;
   margin-top: 10px;
 }
+
+.backBtn {
+  position: relative;
+  top: 30px;
+  right: 48%;
+  color: antiquewhite;
+  background: #4f5db0;
+  padding: 20px 15px;
+  border-radius: 50%;
+}
+.pie-chart-container {
+  display: flex;
+  justify-content: center;
+}

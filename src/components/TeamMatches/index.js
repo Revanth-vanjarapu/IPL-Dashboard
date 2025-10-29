@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
+import PieChartWithCustomizedLabel from './PieChartWithCustomizedLabel'
 import MatchCard from '../MatchCard'
 import './index.css'
 
@@ -8,6 +9,41 @@ class TeamMatches extends Component {
 
   componentDidMount() {
     this.getMatchData()
+  }
+
+  backBtn = () => {
+    const {history} = this.props
+    history.push('/')
+  }
+
+  getMatchStats = () => {
+    const {recentMatches} = this.state
+    let wins = 0
+    let losses = 0
+    let draws = 0
+
+    recentMatches.forEach(match => {
+      const {result, competing_team} = match
+      if (
+        result.toLowerCase().includes('won') &&
+        result.includes(competing_team)
+      ) {
+        wins += 1
+      } else if (result.toLowerCase().includes('won')) {
+        losses += 1
+      } else if (
+        result.toLowerCase().includes('tie') ||
+        result.toLowerCase().includes('draw')
+      ) {
+        draws += 1
+      }
+    })
+
+    return [
+      {name: 'Wins', value: wins},
+      {name: 'Losses', value: losses},
+      {name: 'Draws', value: draws},
+    ]
   }
 
   getMatchData = async () => {
@@ -32,14 +68,18 @@ class TeamMatches extends Component {
 
   render() {
     const {latestMatchData, banner, recentMatches, isLoading} = this.state
-    console.log(latestMatchData, banner, recentMatches)
+    const pieData = this.getMatchStats()
+
     return isLoading ? (
       <div testid="loader">
         <Loader type="Oval" color="#f7db00" height={50} width={50} />
       </div>
     ) : (
       <div className="team-matches">
-        {/* Team Banner */}
+        <button type="button" className="backBtn" onClick={this.backBtn}>
+          Back
+        </button>
+
         <img
           src={banner}
           alt="team banner"
@@ -47,14 +87,12 @@ class TeamMatches extends Component {
           data-testid="team-banner"
         />
 
-        {/* Latest Match Card */}
         <h2 className="section-title">Latest Match</h2>
         <div className="latest-match-card">
           <div className="match-info">
             <p className="match-title">{latestMatchData.competing_team}</p>
             <p data-testid="match-date">{latestMatchData.date}</p>
             <p data-testid="match-venue">{latestMatchData.venue}</p>
-            <p>result</p>
             <p>{latestMatchData.result}</p>
             <p>{latestMatchData.first_innings}</p>
             <p>{latestMatchData.second_innings}</p>
@@ -64,12 +102,15 @@ class TeamMatches extends Component {
               alt={`latest match ${latestMatchData.competing_team}`}
               className="match-logo"
             />
-            <p></p>
             <p data-testid="match-umpires">{latestMatchData.umpires}</p>
           </div>
         </div>
 
-        {/* Recent Matches Section */}
+        <h2 className="section-title">Match Statistics</h2>
+        <div className="pie-chart-container">
+          <PieChartWithCustomizedLabel data={pieData} />
+        </div>
+
         <h2 className="section-title">Recent Matches</h2>
         <ul className="matches-container">
           {recentMatches.map(match => (
